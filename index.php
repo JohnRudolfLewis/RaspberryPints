@@ -65,6 +65,8 @@
 		<?php } ?>
 		
 		<link rel="shortcut icon" href="img/pint.ico">
+
+		<meta http-equiv="refresh" content="60">
 	</head> 
 
 	<body>
@@ -96,7 +98,7 @@
 					<tr>
 						<?php if($config[ConfigNames::ShowTapNumCol]){ ?>
 							<th class="tap-num">
-								TAP<br>#
+								Building<hr/>TAP
 							</th>
 						<?php } ?>
 						
@@ -113,7 +115,7 @@
 						<?php } ?>
 						
 						<th class="name">
-							BEER NAME &nbsp; & &nbsp; STYLE<hr>TASTING NOTES
+							BREWERY : BEER NAME<hr>STYLE & TASTING NOTES
 						</th>
 						
 						<?php if($config[ConfigNames::ShowAbvCol]){ ?>
@@ -137,7 +139,24 @@
 							<tr class="<?php if($i%2 > 0){ echo 'altrow'; }?>" id="<?php echo $beer['id']; ?>">
 								<?php if($config[ConfigNames::ShowTapNumCol]){ ?>
 									<td class="tap-num">
-										<span class="tapcircle"><?php echo $i; ?></span>
+										 <span class="tapcircle">
+	                                       <?php switch ($i) { 
+	                                       case 1:
+	                                               echo "Bldg&nbsp;5k<br/>Left";
+	                                               break;
+	                                       case 2:
+	                                                echo "Bldg&nbsp;5k<br/>Right";
+	                                                break;
+	                                       case 3:
+	                                                echo "Bldg&nbsp;3k<br/>Left";
+	                                                break;
+	                                       case 4:
+	                                                echo "Bldg&nbsp;3k<br/>Right";
+	                                                break;
+	                                       default:
+	                                               echo $i;
+	                                       } ?>
+	                                     </span>
 									</td>
 								<?php } ?>
 							
@@ -278,7 +297,24 @@
 							<tr class="<?php if($i%2 > 0){ echo 'altrow'; }?>">
 								<?php if($config[ConfigNames::ShowTapNumCol]){ ?>
 									<td class="tap-num">
-										<span class="tapcircle"><?php echo $i; ?></span>
+										<span class="tapcircle">
+	                                       <?php switch ($i) { 
+	                                       case 1:
+	                                               echo "Bldg&nbsp;5k<br/>Left";
+	                                               break;
+	                                       case 2:
+	                                                echo "Bldg&nbsp;5k<br/>Right";
+	                                                break;
+	                                       case 3:
+	                                                echo "Bldg&nbsp;3k<br/>Left";
+	                                                break;
+	                                       case 4:
+	                                                echo "Bldg&nbsp;3k<br/>Right";
+	                                                break;
+	                                       default:
+	                                               echo $i;
+	                                       } ?>
+	                                     </span>
 									</td>
 								<?php } ?>
 							
