@@ -53,6 +53,21 @@ class TapManager{
 		return null;
 	}
 
+	function GetByNumber($number){
+		$number = (int) preg_replace('/\D/', '', $number);
+	
+		$sql="SELECT * FROM taps WHERE active = 1 and tapNumber = $number";
+		$qry = mysql_query($sql);
+		
+		if( $i = mysql_fetch_array($qry) ){
+			$tap = new Tap();
+			$tap->setFromArray($i);
+			return $tap;
+		}
+		
+		return null;
+	}
+
 	function updateTapNumber($newTapNumber){
 		$sql="UPDATE config SET configValue = $newTapNumber WHERE configName = '".ConfigNames::NumberOfTaps."'";
 		mysql_query($sql);
