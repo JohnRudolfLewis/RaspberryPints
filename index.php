@@ -81,7 +81,7 @@
 					<?php } ?>
                 </div>
                 <div class="HeaderCenter">
-                    <h1 id="HeaderTitle"><? echo $config[ConfigNames::HeaderText]; ?></h1>
+                    <h1 id="HeaderTitle"><?php echo $config[ConfigNames::HeaderText]; ?></h1>
                 </div>
                 <div class="HeaderRight">
 					<?php if($config[ConfigNames::UseHighResolution]) { ?>			

@@ -340,7 +340,7 @@ CREATE TABLE IF NOT EXISTS `taps` (
 CREATE TABLE IF NOT EXISTS `pours` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`tapId` int(11) NOT NULL,
-	`amountPoured` decimal(6,1) NOT NULL,
+	`amountPoured` decimal(6,5) NOT NULL,
 	`createdDate` TIMESTAMP NULL,
 	`modifiedDate` TIMESTAMP NULL,
 	
