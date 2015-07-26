@@ -1,9 +1,6 @@
 #!/usr/bin/python
 import serial
-import syslog
-import time
-import pycurl
-from StringIO import StringIO
+import subprocess
 
 #The following line is for serial over GPIO
 port = '/dev/ttyS0'
@@ -30,14 +27,7 @@ try:
 			MCP_ADDR = int(reading[1])
 			MCP_PIN = str(reading[2])
 			PULSE_COUNT = str(reading[3])
-
-			buffer = StringIO()
-			c = pycurl.Curl()
-			c.setopt(c.URL, "http://beer.scrum.guru/pour.php?building=" + building + "&pin=" + MCP_PIN + "&pulses" + PULSE_COUNT)
-			c.setopt(c.WRITEDATA, buffer)
-			c.perform()
-			c.close()
-			body = buffer.getvalue()
+			subprocess.call(["curl", "http://beer.scrum.guru/pour.php?building=" + building + "&pin=" + MCP_PIN + "&pulses" + PULSE_COUNT])
 		elif ( reading[0] == "K" ):
 			MCP_ADDR = int(reading[1])
 			MCP_PIN = int(reading[2])
