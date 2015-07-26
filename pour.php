@@ -13,8 +13,12 @@
         if (isset($tapNum) and isset($pulses)){
                 $tap = $tapManager->GetByNumber($tapNum);
                 $tapId = $tap->get_id();
-                $amountPoured = $pulses / 5400 * 0.264172; // galons = pulses / pulsesPerLitre * GalonsPerLitre
 
+                $pulsesPerLitre = 5400;
+                $galonsPerLitre = 0.264172;
+
+                $amountPoured = $pulses / $pulsesPerLitre * $galonsPerLitre;
+                
                 $sql = "INSERT INTO pours (tapId, amountPoured, createdDate, modifiedDate) values ($tapId,$amountPoured,NOW(),NOW())";
 
                 if(mysql_query($sql)) {
