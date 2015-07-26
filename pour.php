@@ -1,7 +1,7 @@
 <?php
         require_once __DIR__.'/includes/config.php';
-        require_once __DIR__.'/includes/models/tap.php';
-        require_once __DIR__.'/includes/managers/tap_manager.php';
+        require_once __DIR__.'/admin/includes/models/tap.php';
+        require_once __DIR__.'/admin/includes/managers/tap_manager.php';
 
 
         parse_str($_SERVER['QUERY_STRING']);
