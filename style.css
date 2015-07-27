@@ -103,9 +103,11 @@ table .tap-num{
 }
 table .srm{
 	width: 125px;
+	vertical-align: middle;
 }
 table .ibu{
 	width: 125px;
+	vertical-align: middle;
 }
 table td.name{
 	text-align: left;
@@ -118,6 +120,7 @@ table .abv{
 }
 table .keg{
 	width: 150px;
+	vertical-align: middle;
 }
 
 table td.tap-num{
