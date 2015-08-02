@@ -19,15 +19,19 @@ try:
 		msg = arduino.readline()
 		if not msg:
 			continue
+		msg = msg.strip()
 		reading = msg.split(";")
 		if ( len(reading) < 2 ):
 			print "Unknown message: "+msg
 			continue
 		if ( reading[0] == "P" ):
+			print "Pour message: " + msg
 			MCP_ADDR = int(reading[1])
 			MCP_PIN = str(reading[2])
 			PULSE_COUNT = str(reading[3])
-			subprocess.call(["curl", "http://beer.scrum.guru/pour.php?building=" + building + "&pin=" + MCP_PIN + "&pulses" + PULSE_COUNT])
+			url = "http://beer.scrum.guru/pour.php?building=" + building + "&pin=" + MCP_PIN + "&pulses=" + PULSE_COUNT
+			subprocess.call(["curl", url])
+			print ""
 		elif ( reading[0] == "K" ):
 			MCP_ADDR = int(reading[1])
 			MCP_PIN = int(reading[2])
