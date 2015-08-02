@@ -28,8 +28,6 @@ void setup() {
     kickedCount[i] = 0;
     lastPinState[i] = digitalRead(pulsePin[i]);
   }
-  
-  sendPulseCount(0, 8,2000);
 }
 
 void loop() {
