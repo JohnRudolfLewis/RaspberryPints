@@ -66,7 +66,6 @@
 		
 		<link rel="shortcut icon" href="img/pint.ico">
 
-		<meta http-equiv="refresh" content="60">
 	</head> 
 
 	<body>
