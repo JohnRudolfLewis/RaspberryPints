@@ -32,7 +32,7 @@ try:
 			url = "http://beer.scrum.guru/pour.php?building=" + building + "&pin=" + MCP_PIN + "&pulses=" + PULSE_COUNT
 			subprocess.call(["curl", url])
 			print ""
-			subprocess.call(["/home/pi/RaspberryPints/python/refresh.sh"])
+			subprocess.call(["sudo", "-u", "pi", "/home/pi/RaspberryPints/python/refresh.sh"])
 		elif ( reading[0] == "K" ):
 			MCP_ADDR = int(reading[1])
 			MCP_PIN = int(reading[2])
